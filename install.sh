@@ -13,13 +13,13 @@ sudo rm -rf /etc/nginx/sites-enables/*
 sudo cp src/sysinfo.conf /etc/apache2/sistes-available
 sudo ln -s /etc/apache2/sites-available/sysinfo.conf /etc/apache2/sites-enabled/sysinfo.conf
 sudo cp src/BALinux.conf /etc/apache2/sites-available
-sudo ln -s /etc/nginx/sites-available/BALinux.conf /etc/nginx/sites-enables/BALinux.conf
+sudo ln -s /etc/nginx/sites-available/BALinux.conf /etc/nginx/sites-enabled/BALinux.conf
 sudo cp src/readTCPDUMP /var/www
 sudo cp src/readIOSTAT /var/www
 sudo cp src/SysRec.py /var/www
 sudo chmod +x /var/www/readTCPDUMP
 sudo chmod +x /var/www/readIOSTAT
-sudo chmod +x /var/www/SysRev
+sudo chmod +x /var/www/SysRec.py
 sudo crontab src/MyCrontab
 sudo service apache2 restart
 sudo service nginx restart
