@@ -12,7 +12,7 @@ sudo rm -rf /etc/nginx/sites-available/*
 sudo rm -rf /etc/nginx/sites-enables/*
 sudo cp src/sysinfo.conf /etc/apache2/sistes-available
 sudo ln -s /etc/apache2/sites-available/sysinfo.conf /etc/apache2/sites-enabled/sysinfo.conf
-sudo cp src/BALinux.conf /etc/apache2/sites-available
+sudo cp src/BALinux.conf /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/BALinux.conf /etc/nginx/sites-enabled/BALinux.conf
 sudo cp src/readTCPDUMP /var/www
 sudo cp src/readIOSTAT /var/www
