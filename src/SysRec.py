@@ -213,30 +213,30 @@ time_wait = str("%.2f" % time_wait)
 #netstat [[Proto Recv-Q Send-Q Local Address Foreign Address Stat],[...],...]
 
 
-cpu = sp.check_output(["mpstat"],universal_newlines=True)
-cpu = re.findall(r'\d+,\d{2}',cpu)
-for i in range(4):
-    cpu[i] = re.sub(',','.',cpu[i])
-cpu[9] = re.sub(',','.',cpu[9])
-cpu[0] = float(cpu[0])+float(cpu[1])
-cpu[1] = cpu[2]
-cpu[2] = cpu[9]
-for i in range (6):
-    del cpu[4]
-cpu[0] = str("%.2f" % cpu[0])
+#cpu = sp.check_output(["mpstat"],universal_newlines=True)
+#cpu = re.findall(r'\d+,\d{2}',cpu)
+#for i in range(4):
+#    cpu[i] = re.sub(',','.',cpu[i])
+#cpu[9] = re.sub(',','.',cpu[9])
+#cpu[0] = float(cpu[0])+float(cpu[1])
+#cpu[1] = cpu[2]
+#cpu[2] = cpu[9]
+#for i in range (6):
+#    del cpu[4]
+#cpu[0] = str("%.2f" % cpu[0])
 #cpu [usr+nice,sys,idle,io]
-current.write(str(cpu)+'\n')
+#current.write(str(cpu)+'\n')
 
-for i in range(len(cpu)):
-    cpu[i]=float(cpu[i])
-for i in range(fSuc):
-    j = files[i].readline()
-    j = eval(j)
-    for k in range(len(j)):
-        cpu[k] += float(j[k])
-for i in range(len(cpu)):
-    cpu[i] /= (fSuc + 1)
-    cpu[i] = str("%.2f" % cpu[i])
+#for i in range(len(cpu)):
+#    cpu[i]=float(cpu[i])
+#for i in range(fSuc):
+#    j = files[i].readline()
+#    j = eval(j)
+#    for k in range(len(j)):
+#        cpu[k] += float(j[k])
+#for i in range(len(cpu)):
+#    cpu[i] /= (fSuc + 1)
+#    cpu[i] = str("%.2f" % cpu[i])
 
 
 tcpdump = ""
@@ -338,7 +338,7 @@ current.write(str(disk)+'\n')
 current.write(str(tcpdump)+'\n')
 current.write(str(netstat)+'\n')
 current.write(closed+' '+listen+' '+syn_sent+' '+syn_received+' '+established+' '+close_wait+' '+fin_wait_1+' '+closing+' '+last_ack+' '+fin_wait_2+' '+time_wait+'\n')
-current.write(str(cpu)+'\n')
+#current.write(str(cpu)+'\n')
 current.write(str(diskSpace)+'\n')
 current.close()
 
@@ -416,10 +416,10 @@ for i in range(len(netstat)):
         s+='''<td>{}</td>'''.format(netstat[i][j])
     s += '''</tr>'''
 s+= '''</table>'''
-s += '''<p>CPU</p><table><tr><td>usr+nice</td><td>sys</td><td>idle</td><td>io</td></tr><tr>'''
-for i in range(len(cpu)):
-        s+='''<td>{}</td>'''.format(cpu[i])
-s+= '''</tr></table>'''
+#s += '''<p>CPU</p><table><tr><td>usr+nice</td><td>sys</td><td>idle</td><td>io</td></tr><tr>'''
+#for i in range(len(cpu)):
+#        s+='''<td>{}</td>'''.format(cpu[i])
+#s+= '''</tr></table>'''
 
 
 
