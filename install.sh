@@ -10,7 +10,7 @@ sudo rm -rf /etc/apache2/sites-available/*
 sudo rm -rf /etc/apache2/sites-enables/*
 sudo rm -rf /etc/nginx/sites-available/*
 sudo rm -rf /etc/nginx/sites-enables/*
-sudo cp src/sysinfo.conf /etc/apache2/sistes-available
+sudo cp src/sysinfo.conf /etc/apache2/sites-available
 sudo ln -s /etc/apache2/sites-available/sysinfo.conf /etc/apache2/sites-enabled/sysinfo.conf
 sudo cp src/BALinux.conf /etc/nginx/sites-available
 sudo ln -s /etc/nginx/sites-available/BALinux.conf /etc/nginx/sites-enabled/BALinux.conf
