@@ -9,7 +9,6 @@ sudo rm -rf /etc/apache2/sites-available
 sudo rm -rf /etc/apache2/sites-enabled
 sudo rm -rf /etc/nginx/sites-available
 sudo rm -rf /etc/nginx/sites-enabled
-sudo rm -rf /etc/apache2/ports.conf
 sudo mkdir /etc/apache2/sites-available
 sudo mkdir /etc/apache2/sites-enabled
 sudo mkdir /etc/nginx/sites-available
